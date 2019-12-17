@@ -1,0 +1,10 @@
+pipelines: 
+  - name: pipelines9
+    steps:
+      - name: pipe_state
+        type: Bash
+        execution:
+          onStart:
+            - restore_pipeline_files pipeline_state_file pipeline_state.txt
+          onExecute:
+            - echo "Good Buoy!!!"
